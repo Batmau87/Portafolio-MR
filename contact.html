@@ -29,27 +29,44 @@
   </div>
 </nav>
 
-<header class="page-head">
+<header class="page-head reveal">
   <div class="container">
     <div class="kicker">Contacto</div>
     <h1>Hablemos</h1>
-    <p>Contacto profesional para colaboraciones, proyectos creativos y oportunidades en diseño interactivo, visual y multimedia.</p>
+    <p>Para colaboraciones, proyectos creativos y oportunidades profesionales.</p>
   </div>
 </header>
 
-<section class="section">
+<section class="section reveal">
   <div class="container grid-2">
-    <div class="panel">
-      <div class="meta">Datos</div>
-      <div class="contact-stack" style="margin-top:1rem;">
-        <div class="contact-item"><span>Correo</span><a href="mailto:maurv23business@gmail.com">maurv23business@gmail.com</a></div>
-        <div class="contact-item"><span>LinkedIn</span><a href="https://www.linkedin.com/in/mauriciorivera04" target="_blank" rel="noreferrer">linkedin.com/in/mauriciorivera04</a></div>
-      </div>
+    <div class="panel glass">
+      <div class="meta">Formulario</div>
+      <form id="contactForm" class="contact-form">
+        <label>
+          <span>Nombre</span>
+          <input type="text" name="name" required placeholder="Tu nombre" />
+        </label>
+        <label>
+          <span>Correo</span>
+          <input type="email" name="email" required placeholder="tucorreo@ejemplo.com" />
+        </label>
+        <label>
+          <span>Mensaje</span>
+          <textarea name="message" required placeholder="Cuéntame sobre tu proyecto"></textarea>
+        </label>
+        <button class="btn primary magnetic" type="submit">Enviar mensaje</button>
+        <p class="form-note">El formulario abrirá tu cliente de correo con el mensaje listo para enviar.</p>
+      </form>
     </div>
-    <div class="panel">
-      <div class="meta">Disponibilidad</div>
-      <p style="margin-top:.65rem;">Disponible para proyectos creativos, colaboraciones y oportunidades relacionadas con diseño interactivo, desarrollo visual, VR y producción multimedia.</p>
-      <div class="actions"><a class="btn primary" href="projects.html">Ver proyectos</a></div>
+    <div class="panel glass">
+      <div class="meta">Redes</div>
+      <p style="margin-top:.65rem;">También puedes encontrarme en LinkedIn.</p>
+      <div class="social-wrap">
+        <a class="linkedin-link lift" href="https://www.linkedin.com/in/mauriciorivera04" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A2.01 2.01 0 0 0 3.2 5.03c0 1.1.88 2.03 2 2.03h.02c1.14 0 2.04-.93 2.04-2.03A2 2 0 0 0 5.25 3ZM20.44 12.46c0-3.46-1.85-5.07-4.31-5.07-1.99 0-2.88 1.1-3.37 1.87V8.5H9.38c.04.5 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.68.12-.92.27-.68.88-1.39 1.91-1.39 1.35 0 1.89 1.03 1.89 2.54V20h3.38v-7.54Z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
