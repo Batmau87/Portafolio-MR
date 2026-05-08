@@ -4,31 +4,36 @@ document.querySelectorAll('[data-link]').forEach(link => {
   if (href === current) link.classList.add('active');
 });
 
-document.querySelectorAll('.tilt-card').forEach(card => {
-  card.addEventListener('mousemove', event => {
-    const rect = card.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    const rotateY = ((x / rect.width) - 0.5) * 8;
-    const rotateX = ((y / rect.height) - 0.5) * -8;
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isTouch = window.matchMedia('(pointer: coarse)').matches;
 
-document.querySelectorAll('.magnetic').forEach(button => {
-  button.addEventListener('mousemove', event => {
-    const rect = button.getBoundingClientRect();
-    const x = event.clientX - rect.left - rect.width / 2;
-    const y = event.clientY - rect.top - rect.height / 2;
-    button.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`;
+if (!prefersReducedMotion && !isTouch) {
+  document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', event => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const rotateY = ((x / rect.width) - 0.5) * 7;
+      const rotateX = ((y / rect.height) - 0.5) * -7;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
   });
-  button.addEventListener('mouseleave', () => {
-    button.style.transform = '';
+
+  document.querySelectorAll('.magnetic').forEach(button => {
+    button.addEventListener('mousemove', event => {
+      const rect = button.getBoundingClientRect();
+      const x = event.clientX - rect.left - rect.width / 2;
+      const y = event.clientY - rect.top - rect.height / 2;
+      button.style.transform = `translate(${x * 0.06}px, ${y * 0.06}px)`;
+    });
+    button.addEventListener('mouseleave', () => {
+      button.style.transform = '';
+    });
   });
-});
+}
 
 const form = document.getElementById('contactForm');
 if (form) {
